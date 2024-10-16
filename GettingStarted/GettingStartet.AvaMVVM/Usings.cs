@@ -10,4 +10,6 @@ global using System.Runtime.CompilerServices;
 global using Avalonia;
 global using Avalonia.Controls;
 
+global using ReactiveUI;
+
 namespace GettingStartet.AvaMVVM;

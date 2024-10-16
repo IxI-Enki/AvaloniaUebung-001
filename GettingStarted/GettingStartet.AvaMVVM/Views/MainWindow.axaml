@@ -16,38 +16,98 @@
     <vm:MainWindowViewModel/>
   </Design.DataContext>
 
-  <StackPanel DataContext="{Binding SimpleViewModel}"
+
+  <TabControl>
+
+    <!-- Our Simple ViewModel -->
+    <TabItem Header="Create Animals" >
+
+      <StackPanel DataContext="{Binding SimpleViewModel}"
               Spacing="2"
               Height="0"
               Margin="40">
 
-    <TextBlock>
-      Enter a Animal Name:
-    </TextBlock>
+        <TextBlock>
+          Enter an Animal Name:
+        </TextBlock>
 
-    <Image Name="{Binding CamelPicture}" >
+        <Image Name="{Binding CamelPicture}" >
+          <!-- placeholder for a image? -->
+        </Image>
 
-    </Image>
+        <TextBox Text="{Binding Name}"
+                 TextBlock.TextAlignment="Center"
+                   />
 
-    <TextBox Text="{Binding Name}" />
+        <TextBox Text="{Binding Greeting, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextBlock.TextAlignment="Center"
+                 FontWeight="Bold"
+                   />
 
-    <TextBox Text="{Binding Greeting, Mode=OneWay}"
-       IsReadOnly="True"
-       FontWeight="Bold" />
+        <Button Name="{Binding AcceptButton}"
+                Width="150"
+                Padding="5"
+                MaxWidth="150"
+                Margin="30"
+                TextElement.FontWeight="Bold"
+                FontFamily="DejaVu Sans Mono"
+                TextBlock.LetterSpacing="5"
+                TextBlock.MaxLines="1"
+                TextBlock.TextAlignment="Center"
+                  >
+          Accept
+        </Button>
 
-    <Button Name="{Binding AcceptButton}"
-            Width="150"
-            Padding="5"
-            MaxWidth="150"
-            Margin="30"
-            TextElement.FontWeight="Bold"
-            FontFamily="DejaVu Sans Mono"
-            TextBlock.LetterSpacing="5"
-            TextBlock.MaxLines="1"
-            TextBlock.TextAlignment="Center"
-            >
-      Accept
-    </Button>
+      </StackPanel>
+    </TabItem>
 
-  </StackPanel>
+
+
+    <!-- Our ReactiveViewModel -->
+    <TabItem Header="Create Caravan" >
+      <StackPanel DataContext="{Binding ReactiveViewModel}"
+                  Spacing="2"
+                  Height="0"
+                  Margin="40">
+
+        <TextBlock>
+          Enter a Caravan Name:
+        </TextBlock>
+
+        <Image Name="{Binding CamelPicture}" >
+          <!-- placeholder for a image? -->
+        </Image>
+
+        <TextBox Text="{Binding Name}"
+                 TextBlock.TextAlignment="Center"
+                   />
+
+        <TextBox Text="{Binding Greeting, Mode=OneWay}"
+                 IsReadOnly="True"
+                 TextBlock.TextAlignment="Center"
+                 FontWeight="Bold"
+                   />
+
+        <Button Name="{Binding AcceptButton}"
+                Width="150"
+                Padding="5"
+                MaxWidth="150"
+                Margin="30"
+                TextElement.FontWeight="Bold"
+                FontFamily="DejaVu Sans Mono"
+                TextBlock.LetterSpacing="5"
+                TextBlock.MaxLines="1"
+                TextBlock.TextAlignment="Center"
+                  >
+          Accept
+        </Button>
+      </StackPanel>
+    </TabItem>
+
+    <TabItem Header="Add Animal to Caravan" >
+
+    </TabItem>
+
+  </TabControl>
 </Window>

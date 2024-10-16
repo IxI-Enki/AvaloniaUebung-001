@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GettingStarted/.vs/GettingStarted/v17
+/.vs
+/GettingStarted/GettingStarted.Ava/obj/Debug/net8.0
+/GettingStarted/.vs/GettingStarted/FileContentIndex
+/GettingStarted/GettingStarted.Ava/obj
+/GettingStarted/GettingStarted.Ava/bin/Debug/net8.0

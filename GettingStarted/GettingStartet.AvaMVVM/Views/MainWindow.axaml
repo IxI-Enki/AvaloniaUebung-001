@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:vm="using:GettingStartet.AvaMVVM.ViewModels"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+       x:CompileBindings="True"
+       x:DataType="vm:MainWindowViewModel"
+       x:Class="GettingStartet.AvaMVVM.Views.MainWindow"
+        
+       Icon="/Assets/Icon.ico"
+        
+       Title="Karawanen Simulator">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <StackPanel DataContext="{Binding SimpleViewModel}"
+              Spacing="2"
+              Height="0"
+              Margin="40">
+
+    <TextBlock>
+      Enter a Animal Name:
+    </TextBlock>
+
+    <Image Name="{Binding CamelPicture}" >
+
+    </Image>
+
+    <TextBox Text="{Binding Name}" />
+
+    <TextBox Text="{Binding Greeting, Mode=OneWay}"
+       IsReadOnly="True"
+       FontWeight="Bold" />
+
+    <Button Name="{Binding AcceptButton}"
+            Width="150"
+            Padding="5"
+            MaxWidth="150"
+            Margin="30"
+            TextElement.FontWeight="Bold"
+            FontFamily="DejaVu Sans Mono"
+            TextBlock.LetterSpacing="5"
+            TextBlock.MaxLines="1"
+            TextBlock.TextAlignment="Center"
+            >
+      Accept
+    </Button>
+
+  </StackPanel>
+</Window>
